@@ -15,7 +15,7 @@ class TestLogin(unittest.TestCase):
         self.driver = webdriver.Chrome()        
     
     def Success_Login(self):        
-        driver = self.drive
+        driver = self.driver
         driver.get("https://www.saucedemo.com/")
         
         driver.find_element(By.ID,"user-name").send_keys("standard_user")

@@ -39,6 +39,18 @@ class TestAssert():
     #Assert element not present
     elements = self.driver.find_elements(By.XPATH, "//input[@id=\'login-button\']")
     assert len(elements) == 0
+
+    elements = self.driver.find_elements(By.CSS_SELECTOR, "*[data-test=\"login-button\"]")
+    assert len(elements) == 0
+
+    elements = self.driver.find_elements(By.ID, "login-button")
+    assert len(elements) == 0
+
+    elements = self.driver.find_elements(By.NAME, "login-button")
+    assert len(elements) == 0
+    
+    elements = self.driver.find_elements(By.CSS_SELECTOR, "#login-button")
+    assert len(elements) == 0
     
     #Assert not checked  
     assert self.driver.find_element(By.XPATH, "//input[@id=\'login-button\']").is_selected() is False
